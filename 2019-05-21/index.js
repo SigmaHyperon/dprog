@@ -14,11 +14,12 @@ function hh(input){
 }
 
 function hh2(i){
-	const w = i.filter(v => v != 0);
-	if(w.length == 0) return true;
-	let [f, ...r] = w.sort((a,b) => b-a);
+	const [f, ...r] = i.filter(v => v > 0).sort((a,b) => b-a);
+	if(f == undefined) return true;
 	if(f > r.length) return false;
-	return hh2(r.map(v => f-- > 0 ? v-1 : v));
+	return hh2(r.map((v,i) => f > i ? v-1 : v));
 }
 
-console.log(hh2([3, 1, 2, 3, 1, 0]));
+let h=(i)=>{let[f,...r]=i.filter(v=>v>0).sort((a,b)=>b-a);return f==null?true:f>r.length?false:h(r.map((v,i)=>f>i?v-1:v));}
+
+module.exports = {hh, hh2, hh3};
