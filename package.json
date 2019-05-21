@@ -1,0 +1,12 @@
+{
+  "name": "dprog",
+  "version": "1.0.0",
+  "description": "r/DailyProgrammer",
+  "main": " ",
+  "dependencies": {
+    "mocha": "^6.1.2"
+  },
+  "devDependencies": {},
+  "author": "",
+  "license": "MIT"
+}
